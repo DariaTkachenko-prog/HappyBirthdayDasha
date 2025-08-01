@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Dasha</title>
-
-  <!-- Подключение шрифта через Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вітаємо, з Днем народження!</title>
 
   <!-- ✅ Open Graph (Facebook, Telegram) -->
   <meta property="og:title" content="🎁 Вітаємо з Днем народження! Натисни на зображення — тебе чекає привітання🎈" />
@@ -27,6 +23,9 @@
   <meta name="description" content="🎁 Вітаємо з Днем народження! Натисни на зображення — тебе чекає привітання🎈" />
   <meta name="keywords" content="День народження, привітання, подарунок, сюрприз, святкування" />
 
+  <!-- Подключение шрифта через Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  
   <!-- Подключение стилей -->
   <link rel="stylesheet" href="style.css">
 
@@ -53,22 +52,63 @@
     .congrats-text p {
       font-family: 'Dancing Script', cursive, sans-serif;
     }
+
+    /* Стили для мобильных устройств */
+    @media screen and (max-width: 768px) {
+      body {
+        font-family: 'Dancing Script', cursive, sans-serif; /* Обеспечиваем корректное отображение шрифта на мобильных */
+      }
+
+      h1 {
+        font-size: 1.8rem; /* Подгонка шрифта для мобильных */
+      }
+
+      .click-text {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
-    <h1 class="h1-line">Вітаємо з Днем народження!</h1>
-    <div class="congrats-wrapper">
+    <h1>
+      <span class="h1-line line1">
+        ДАША 🎉
+      </span>
+      <span class="h1-line line2">ВІТАЄМО ТЕБЕ З ДНЕМ НАРОДЖЕННЯ!</span>
+    </h1>
+
+    <div class="cake-container" id="cake-wrapper">
+      <img src="cake.png" alt="Торт" id="cake" />
+      <img src="candle-lit.png" alt="Зажженная свеча" id="candle-lit" class="hidden" />
+      <span class="click-text">Натисни на торт 👇</span>
+    </div>
+
+    <div class="congrats-wrapper hidden">
       <div class="congrats-text">
-        <p>Натисни на зображення — тебе чекає привітання 🎈</p>
+        <div class="congrats-text-inner">
+          <p>
+            <span class="line">Бажаємо, щоб кожен день приносив енергію та нові можливості,</span><br />
+            <span class="line">а рішення приймались з легкістю і натхненням.</span><br />
+            <span class="line">Нехай кожен крок наближає до великих мрій,</span><br />
+            <span class="line">а життя дарує моменти, які залишають слід у серці.</span><br /><br />
+            <em class="signature">Твоя команда АФ “Наша Бухгалтерія”✨</em>
+          </p>
+        </div>
       </div>
       <div class="congrats-photo">
-        <img src="https://dariatkachenko-prog.github.io/HappyBirthdayDasha/preview.jpg" alt="Happy Birthday Dasha" />
+        <img src="congrats-image.png" alt="Привітальне фото" />
       </div>
     </div>
   </div>
+
+  <audio id="bg-music" src="music.mp3" loop></audio>
+  <audio id="open-sound" src="open.mp3"></audio>
+
+  <script src="script.js"></script>
 </body>
+</html>
 
 
 
@@ -111,6 +151,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
